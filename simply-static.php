@@ -5,7 +5,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * Plugin Name:       Simply Static
+ * Plugin Name:       Simply Static AWS S3
  * Plugin URI:        http://simplystatic.co/
  * Description:       Produces a static HTML version of your WordPress install and adjusts URLs accordingly.
  * Version:           2.1.0
@@ -13,7 +13,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Author URI:        http://codeofconduct.co/
  * License:           GPL-2.0+
  * License URI:       http://www.gnu.org/licenses/gpl-2.0.txt
- * Text Domain:       simply-static
+ * Text Domain:       simply-static-aws-s3
  * Domain Path:       /languages
  */
 

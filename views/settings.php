@@ -82,9 +82,16 @@ namespace Simply_Static;
 							<label for='deliveryMethod'><?php _e( "Delivery Method", 'simply-static' ); ?></label></th>
 						<td>
 							<select name='delivery_method' id='deliveryMethod'>
+								<option value='s3' <?php Util::selected_if( $this->delivery_method === 's3' ) ?>><?php _e( "Amazon S3", 'simply-static' ); ?></option>
 								<option value='zip' <?php Util::selected_if( $this->delivery_method === 'zip' ) ?>><?php _e( "ZIP Archive", 'simply-static' ); ?></option>
 								<option value='local' <?php Util::selected_if( $this->delivery_method === 'local' ) ?>><?php _e( "Local Directory", 'simply-static' ); ?></option>
 							</select>
+						</td>
+					</tr>
+					<tr class='delivery-method s3'>
+						<th></th>
+						<td>
+							<p><?php _e( "Saving your static files to Amazon S3. After generating your static files, it will be uploaded to the given s3 bucket", 'simply-static' ); ?></p>
 						</td>
 					</tr>
 					<tr class='delivery-method zip'>
@@ -112,6 +119,33 @@ namespace Simply_Static;
 							</div>
 						</td>
 					</tr>
+                    <tr class='delivery-method s3'>
+                        <th>
+                            <label for='aws_s3_bucket'><?php _e( "AWS S3 Bucket", 'simply-static' );?></label>
+                        </th>
+                        <td>
+                            <input aria-describedby='awsS3BucketHelpBlock' type='text' id='awsS3Bucket' name='aws_s3_bucket' value='<?php echo esc_attr( $this->aws_s3_bucket ) ?>' placeholder='Existing bucket name' class='widefat' />
+                            <p id='awsS3BucketHelpBlock' class='help-block'><?php _e( "Your static site will be published in this S3 bucket. It must already exist. Use AWS Console to create a bucket.", 'simply-static' ); ?></p>
+                        </td>
+                    </tr>
+                    <tr class='delivery-method s3'>
+                        <th>
+                            <label for='aws_access_key_id'><?php _e( "AWS Access Key ID", 'simply-static' );?></label>
+                        </th>
+                        <td>
+                            <input aria-describedby='awsAccessKeyIDHelpBlock' type='password' id='awsS3AccessKeyID' name='aws_access_key_id' value='<?php echo esc_attr( $this->aws_access_key_id ) ?>' placeholder='Access Key ID with write access to S3' class='widefat' />
+                            <p id='awsS3AccessKeyIDHelpBlock' class='help-block'><?php _e( "If you don't have an access key, use AWS Console IAM to generate a new user and access key. It must have rights to publish to S3.", 'simply-static'); ?></p>
+                        </td>
+                    </tr>
+                    <tr class='delivery-method s3'>
+                        <th>
+                            <label for='aws_secret_access_key'><?php _e( "AWS Secret Access Key", 'simply-static' );?></label>
+                        </th>
+                        <td>
+                            <input aria-describedby='awsSecretAccessKeyHelpBlock' type='password' id='awsSecretS3AccessKey' name='aws_secret_access_key' value='<?php echo esc_attr( $this->aws_secret_access_key ) ?>' placeholder='Secret Access Key with write access to S3' class='widefat' />
+                            <p id='awsS3SecretAccessKeyHelpBlock' class='help-block'><?php _e( "If you don't have an access key, use AWS Console IAM to generate a new user and access key. It must have rights to publish to S3.", 'simply-static' ); ?></p>
+                        </td>
+                    </tr>
 					<tr>
 						<th></th>
 						<td>

@@ -10,7 +10,7 @@ if ( ! defined( 'ABSPATH' ) ) {
  * Simply Static options class
  */
 class Options {
-	/**
+    /**
 	 * Singleton instance
 	 * @var Simply_Static\Options
 	 */
@@ -26,7 +26,7 @@ class Options {
 	 * Disable usage of "new"
 	 * @return void
 	 */
-	protected function __construct() {}
+    function __construct() {}
 
 	/**
 	 * Disable cloning of the class
@@ -67,9 +67,9 @@ class Options {
 	public static function reinstance() {
 		self::$instance = null;
 		return self::instance();
-	}
+	} 
 
-	/**
+    /**
 	 * Updates the option identified by $name with the value provided in $value
 	 * @param string $name The option name
 	 * @param mixed $value The option value

@@ -1,4 +1,4 @@
-=== Simply Static ===
+=== Simply Static AWS SDK S3 ===
 Contributors: codeofconduct
 Donate link: http://simplystatic.co/
 Tags: html, static website generator, static site, secure, fast
