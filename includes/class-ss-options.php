@@ -67,7 +67,7 @@ class Options {
 	public static function reinstance() {
 		self::$instance = null;
 		return self::instance();
-	} 
+	}
 
     /**
 	 * Updates the option identified by $name with the value provided in $value
